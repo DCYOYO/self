@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e105bb1e93.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page2.css">
+
+</head>
+
+<body style="margin: 0;">
+    <main>
+        <div class="left">
+            <div>
+                <img src="https://github.com/DCYOYO/yoyo/blob/main/SUS-removebg-preview.png?raw=true" class="old">
+                <div class="backimg"></div>
+            </div>
+
+            <div class="sus">
+                <a href="#page1" class="btn1" data-transition="slide">
+                    <span>Button 1</span>
+                    <em></em>
+                </a>
+                <a href="#page2" class="btn1 self" data-transition="slide">
+                    <span>興趣</span>
+                    <em></em>
+                </a>
+                <a href="#page3" class="btn1" data-transition="slide">
+                    <span>popcat</span>
+                    <em></em>
+                </a>
+                <!-- <a href="#page2" class="btn1" data-transition="slide">
+                    <span>Button 2</span>
+                    <em></em>
+                </a> -->
+            </div>
+
+
+
+            <div class="ulicon">
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-sharp fa-solid fa-x"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-brands fa-discord"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-brands fa-github"><span class="label">Email</span></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div style="position: fixed; left: 20vw;width: 80vw;height: 100vh;">
+            <div data-role="page" id="page1" class="back">
+
+                <div class="text-display" id="mainTextDisplay">This text color will change based on the background color
+                </div>
+            </div>
+            <div data-role="page" id="page2" class="back">
+
+                <div class="yy">
+                    <table class="ta">
+                        <tr>
+                            <td><div class="button-group a" id="0"><b>寫程式</b></div></td>
+                            <td></td>
+                            <td><div class="button-group b" id="1"><b>學習當個雞掰人</b></div></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><div class="button-group c" id="2"><b>算算數學(但很懶)</b></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><div class="button-group d" id="3"><b>玩遊戲(雖然這是廢話)</b></div></td>
+                            <td></td>
+                            <td><div class="button-group e" id="4"><b>聽聽音樂</b></div></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><div class="button-group f" id="5"><b>一句話總括:我就是個廢人</b></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div data-role="page" id="page3" class="back">
+
+                <div id="container"></div>
+                <div class="popcat">
+                    <button id="startAddingBtn" class="fa-solid fa-play circle-btn"></button>
+                    <button id="stopAddingBtn" class="fa-solid fa-stop circle-btn"></button>
+                    <button id="clearBoxesBtn" class="fa-solid fa-rotate-right circle-btn"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="weatherModalLabel">選擇或輸入城市名稱</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="citySelect" class="form-label">選擇城市：</label>
+                            <select class="form-select" id="citySelect">
+                                <option value="Taipei">台北</option>
+                                <option value="New York">紐約</option>
+                                <option value="Tokyo">東京</option>
+                                <option value="other">其他（請自行輸入）</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="otherCityInput" style="display: none;">
+                            <label for="otherCity" class="form-label">城市名稱：</label>
+                            <input type="text" class="form-control" id="otherCity" placeholder="請輸入城市名稱(ENGLISH)">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary getWeatherBtn">查詢天氣</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 顯示天氣結果的 Modal -->
+        <div class="modal fade" id="weatherResultModal" tabindex="-1" aria-labelledby="weatherResultModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="weatherResultModalLabel">天氣查詢結果</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="weatherResultBody">
+                        <!-- 天氣資訊將顯示在這裡 -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="colorAdjusterModal" tabindex="-1" role="dialog"
+            aria-labelledby="colorAdjusterModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="colorAdjusterModalLabel">RGB選擇器</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="color-display" id="colorDisplay">
+                            <div class="text-display" id="modalTextDisplay">這裡字的顏色會是改變背景過後的顏色</div>
+                        </div>
+                        <div class="slider-container">
+                            <label for="redSlider">R</label>
+                            <input type="range" id="redSlider" min="0" max="255" value="255" class="form-control">
+                        </div>
+                        <div class="slider-container">
+                            <label for="greenSlider">G</label>
+                            <input type="range" id="greenSlider" min="0" max="255" value="255" class="form-control">
+                        </div>
+                        <div class="slider-container">
+                            <label for="blueSlider">B</label>
+                            <input type="range" id="blueSlider" min="0" max="255" value="255" class="form-control">
+                        </div>
+                        <div class="color-code" id="colorCode">RGB(255, 255, 255)</div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">離開</button>
+                        <button type="button" class="btn btn-success setBackgroundBtn" data-dismiss="modal">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="background-color: #0d1b2a; color: #e0e1dd;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="calculatorModalLabel">計算機</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="calculator-container">
+                            <div id="history">
+                                <h3>History</h3>
+                                <div id="history-content"></div>
+                            </div>
+                            <div id="calculator">
+                                <input type="text" id="display" disabled>
+                                <input type="text" id="ans" disabled>
+                                <br>
+                                <button id="ac" class="operator lol">AC</button>
+                                <button id="de" class="operator lol">←</button>
+                                <button id="/" class="operator lol">/</button>
+                                <br>
+                                <button id="7" class="lol">7</button>
+                                <button id="8" class="lol">8</button>
+                                <button id="9" class="lol">9</button>
+                                <button id="*" class="operator lol">*</button>
+                                <br>
+                                <button id="4" class="lol">4</button>
+                                <button id="5" class="lol">5</button>
+                                <button id="6" class="lol">6</button>
+                                <button id="-" class="operator lol">-</button>
+                                <br>
+                                <button id="1" class="lol">1</button>
+                                <button id="2" class="lol">2</button>
+                                <button id="3" class="lol">3</button>
+                                <button id="+" class="operator lol">+</button>
+                                <br>
+                                <button id="00" class="lol">00</button>
+                                <button id="0" class="lol">0</button>
+                                <button id="." class="operator lol">.</button>
+                                <button id="=" class="operator lol">=</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="fa-solid fa-gear popup-button"></button>
+
+        <div id="popup-content" class="popup-content">
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#weatherModal">
+                <b>查詢天氣</b>
+            </button>
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#colorAdjusterModal">
+                <b>背景選擇器</b>
+            </button>
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#calculatorModal">
+                <b>計算機</b>
+            </button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="api.js"></script>
+        <script src="back.js"></script>
+        <script src="calc.js"></script>
+        <script src="move.js"></script>
+        <script src="popcat.js"></script>
+        <script src="change.js"></script>
+        <!-- <script src="scripts.js"></script> -->
+    </main>
+
+</body>
+
+</html>

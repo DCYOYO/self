@@ -4,7 +4,7 @@ $(document).ready(function() {
     const ctx = canvas.getContext('2d');
 
     //設定圓餅圖的比例及顯示文字
-    const data = [34.7, 27.2, 38.1];
+    const data = [35.2, 27.5, 37.3];
     const labels = ['HTML', 'CSS', 'JAVASCRIPT'];
 
     // 圓餅圖的顏色

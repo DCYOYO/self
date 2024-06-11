@@ -14,7 +14,7 @@ function updateColor() {
     const invertedBlue = 255 - blue;
     const invertedColor = `rgb(${invertedRed}, ${invertedGreen}, ${invertedBlue})`;
     $('#modalTextDisplay').css('color', invertedColor);
-    
+
 }
 $(document).ready(function () {
     $('.setBackgroundBtn').on('click', function () {
@@ -31,12 +31,15 @@ $(document).ready(function () {
         const invertedGreen = 255 - green;
         const invertedBlue = 255 - blue;
         const invertedColor = `rgb(${invertedRed}, ${invertedGreen}, ${invertedBlue})`;
-        $('#mainTextDisplay').css('color', invertedColor);
-        $('.popup-content button').css('color', invertedColor);
+        // $('.popup-content button').css('color', invertedColor);
         $('.popup-button').css('color', invertedColor);
         $('b').css('color', invertedColor);
-
-
+        $('h3').css('color', invertedColor);
+        $('h4').css('color', invertedColor);
+        $('h1').css('color', invertedColor);
+        $('.l').css('color', invertedColor);
+        $('.ll').css('color', invertedColor);
+        $('.marquee-character').css('color', invertedColor);
     });
 
     $('#redSlider, #greenSlider, #blueSlider').on('input', updateColor);

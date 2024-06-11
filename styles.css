@@ -7,6 +7,7 @@ body {
 
 .back {
     background-color: #ffffff;
+
 }
 
 .left {
@@ -83,7 +84,7 @@ body {
 .btn1 span {
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     padding-left: 35px;
@@ -422,7 +423,7 @@ ul.icons button {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-#container {
+.container {
     width: 80vw;
     height: 100vh;
 
@@ -463,4 +464,7 @@ ul.icons button {
     box-shadow: none !important;
     color: transparent !important;
     background-color: #000 !important;
+}
+.sosad:hover>b{
+    color: white !important;
 }

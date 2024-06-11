@@ -9,13 +9,13 @@ $(document).ready(function () {
     ];
     var clicked = true;
     var con = false;
-    var  randomImage;
+    var randomImage;
     $('.button-group').click(function () {
         if (!clicked) {
             var set = $(this);
             var divContent = set.text();
-
-
+            var color = $('b').css('color');
+            console.log(color);
             // 清除 div 中的内容
             set.text('');
             set.css('background-image', 'url(' + randomImage + ')');
@@ -25,6 +25,7 @@ $(document).ready(function () {
             setTimeout(function () {
 
                 set.append($('<b></b>').text(divContent));
+                $('b').css('color', color);
                 set.css('background-image', '');
                 clicked = true;
                 // con = false;
@@ -34,8 +35,8 @@ $(document).ready(function () {
         }
         if (clicked) {
             // if (!con) {
-                randomImage = images[$(this).attr("id")];
-                clicked = false;
+            randomImage = images[$(this).attr("id")];
+            clicked = false;
             // }
 
 

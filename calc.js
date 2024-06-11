@@ -3,11 +3,14 @@ $(document).ready(function () {
     const ans = $("#ans");
     const btns = $("button");
     const historyContent = $("#history-content");
+
     var fir = true;
 
     display.val("0");
     ans.val("ANS=");
-
+    $('.sosad').on('click', function () {
+        display.val("");
+    });
     btns.on('click', function () {
 
 
@@ -54,8 +57,12 @@ $(document).ready(function () {
                 }
             }
         }
-
-
+        if (display.val() == "undefined") {
+            display.val("");
+        }
+        $('ihate').on('click', function () {
+            display.val("");
+        });
 
     });
 

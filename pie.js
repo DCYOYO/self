@@ -1,7 +1,7 @@
 $(document).ready(function() {
     const canvas = $('#pieChart')[0];
     const ctx = canvas.getContext('2d');
-    const data = [33, 33, 34];
+    const data = [34.7, 27.2, 38.1];
     const labels = ['HTML', 'CSS', 'JAVASCRIPT'];
     const colors = ['#FF6384', '#36A2EB', '#FFCE56'];
     const total = data.reduce((sum, value) => sum + value, 0);

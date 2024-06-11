@@ -38,16 +38,13 @@ $(document).ready(function () {
                                            <p class="card-text">風速: ${data.wind.speed} m/s</p>
                                        </div>
                                    </div>`;
-                $('#weatherResultBody').html(weatherInfo);
-                // 關閉輸入城市名稱的模態框
+                $('#weatherResultBody').html(weatherInfo); 
                 $('#weatherModal').modal('hide');
-                // 顯示結果的模態框
                 $('#weatherResultModal').modal('show');
             },
             error: function (error) {
                 console.error('錯誤:', error);
                 $('#weatherResultBody').html('錯誤: ' + error.responseText);
-                // 顯示結果的模態框
                 $('#weatherResultModal').modal('show');
             }
         });

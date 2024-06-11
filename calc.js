@@ -3,24 +3,21 @@ $(document).ready(function () {
     const ans = $("#ans");
     const btns = $("button");
     const historyContent = $("#history-content");
-
     var fir = true;
 
-    display.val("0");
-    ans.val("ANS=");
+
+    
     $('.sosad').on('click', function () {
         display.val("");
     });
+    ans.val("ANS=");
     btns.on('click', function () {
-
-
         var dis = display.val().slice(-1);
         var va = $(this).attr("id");
         if (display.val() == "undefined") {
             display.val("");
         }
         else if ($(this).attr("id") === "=") {
-
             try {
                 let result = eval(display.val());
                 ans.val("ANS=" + result);
@@ -60,10 +57,6 @@ $(document).ready(function () {
         if (display.val() == "undefined") {
             display.val("");
         }
-        $('ihate').on('click', function () {
-            display.val("");
-        });
-
     });
 
 

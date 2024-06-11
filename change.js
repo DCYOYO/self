@@ -8,40 +8,28 @@ $(document).ready(function () {
         "https://media.tenor.com/--h8XIKn2xsAAAAM/%E5%BB%A2%E7%89%A9%E5%85%94%E5%AD%90-%E5%BB%A2%E5%85%94.gif"
     ];
     var clicked = true;
-    var con = false;
     var randomImage;
     $('.button-group').click(function () {
-        if (!clicked) {
+        if (clicked) {
+            randomImage = images[$(this).attr("id")];
+            clicked = false;
+        }
+        else  {
             var set = $(this);
             var divContent = set.text();
             var color = $('b').css('color');
-            console.log(color);
-            // 清除 div 中的内容
+            
             set.text('');
             set.css('background-image', 'url(' + randomImage + ')');
 
-            // con = true;
-
             setTimeout(function () {
-
                 set.append($('<b></b>').text(divContent));
                 $('b').css('color', color);
                 set.css('background-image', '');
                 clicked = true;
-                // con = false;
-
             }, 3000);
-
         }
-        if (clicked) {
-            // if (!con) {
-            randomImage = images[$(this).attr("id")];
-            clicked = false;
-            // }
-
-
-
-        }
+        
 
     });
     $('.self').click(function () {

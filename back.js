@@ -7,13 +7,11 @@ function updateColor() {
     $('#colorDisplay').css('background-color', rgbColor);
     $('#colorCode').text(`RGB(${red}, ${green}, ${blue})`);
 
-
-
-    const invertedRed = 255 - red;
-    const invertedGreen = 255 - green;
-    const invertedBlue = 255 - blue;
-    const invertedColor = `rgb(${invertedRed}, ${invertedGreen}, ${invertedBlue})`;
-    $('#modalTextDisplay').css('color', invertedColor);
+    const chRed = 255 - red;
+    const chGreen = 255 - green;
+    const chBlue = 255 - blue;
+    const chColor = `rgb(${chRed}, ${chGreen}, ${chBlue})`;
+    $('#modalTextDisplay').css('color', chColor);
 
 }
 $(document).ready(function () {
@@ -25,21 +23,18 @@ $(document).ready(function () {
         const rgbColor = `rgb(${red}, ${green}, ${blue})`;
         $('.back').css('background-color', rgbColor);
 
-
-
-        const invertedRed = 255 - red;
-        const invertedGreen = 255 - green;
-        const invertedBlue = 255 - blue;
-        const invertedColor = `rgb(${invertedRed}, ${invertedGreen}, ${invertedBlue})`;
-        // $('.popup-content button').css('color', invertedColor);
-        $('.popup-button').css('color', invertedColor);
-        $('b').css('color', invertedColor);
-        $('h3').css('color', invertedColor);
-        $('h4').css('color', invertedColor);
-        $('h1').css('color', invertedColor);
-        $('.l').css('color', invertedColor);
-        $('.ll').css('color', invertedColor);
-        $('.marquee-character').css('color', invertedColor);
+        const chRed = 255 - red;
+        const chGreen = 255 - green;
+        const chBlue = 255 - blue;
+        const chColor = `rgb(${chRed}, ${chGreen}, ${chBlue})`;
+        $('.popup-button').css('color', chColor);
+        $('b').css('color', chColor);
+        $('h3').css('color', chColor);
+        $('h4').css('color', chColor);
+        $('h1').css('color', chColor);
+        $('.l').css('color', chColor);
+        $('.ll').css('color', chColor);
+        $('.marquee-character').css('color', chColor);
     });
 
     $('#redSlider, #greenSlider, #blueSlider').on('input', updateColor);

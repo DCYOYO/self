@@ -29,9 +29,9 @@ function updatePopupPosition(buttonOffsetX, buttonOffsetY) {
     let popupX = buttonOffsetX;
     let popupY = buttonOffsetY - popup.outerHeight();
 
-    // Check for overlap with button
+    
     if (popupY < 0 || (popupY + popup.outerHeight() > $(window).height())) {
-        popupY = buttonOffsetY + button.outerHeight(); // Place below the button
+        popupY = buttonOffsetY + button.outerHeight(); 
     }
 
     popupX = Math.min(popupX, $(window).width() - popup.outerWidth());
@@ -41,23 +41,6 @@ function updatePopupPosition(buttonOffsetX, buttonOffsetY) {
         left: popupX + 'px',
         top: popupY + 'px'
     });
-}
-function updateColor() {
-    const red = $('#redSlider').val();
-    const green = $('#greenSlider').val();
-    const blue = $('#blueSlider').val();
-
-    const rgbColor = `rgb(${red}, ${green}, ${blue})`;
-    $('#colorDisplay').css('background-color', rgbColor);
-    $('#colorCode').text(`RGB(${red}, ${green}, ${blue})`);
-
-
-
-    const invertedRed = 255 - red;
-    const invertedGreen = 255 - green;
-    const invertedBlue = 255 - blue;
-    const invertedColor = `rgb(${invertedRed}, ${invertedGreen}, ${invertedBlue})`;
-    $('#modalTextDisplay').css('color', invertedColor);
 }
 $(document).ready(function () {
     const button = $('.popup-button');
